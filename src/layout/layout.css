@@ -1,0 +1,98 @@
+ #app, .layout {
+  height: 100%;
+}
+
+.sider .header-logo {
+  height: 64px;
+  line-height: 64px;
+  padding-left: 24px;
+  background: #001529;
+}
+.sider .header-logo .logo {
+  height: 32px;
+  margin-right: 10px;
+}
+.sider .header-logo span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+.sider .menu {
+  height: calc(100vh - 64px);
+  overflow: auto;
+}
+
+.header{
+  padding-left: 12px;
+  position: fixed;
+  top: 0px;
+  left: 200px;
+  right: 0;
+} 
+.header .trigger {
+  font-size: 18px;
+  cursor: pointer;
+  color: #d9d9d9;
+  transition: color .3s;
+}
+.header .trigger:hover {
+  color: #ecebeb;
+}
+.header .header-tool {
+  height: 64px;
+  color: #fff;
+  float: right;
+}
+.header .header-tool .ant-dropdown-trigger {
+  margin-left: 20px;
+  cursor: pointer;
+}
+.header .header-tool .ant-dropdown-trigger>i {
+  font-size:18px !important;
+}
+
+.content .fixed-title {
+  display: block;
+  position: fixed;
+  top: 64px;
+  left: 200px;
+  right: 0;
+  padding: 2px;
+  font-size: 14px;
+  border-bottom: 1px solid #d9d9d9;
+  background-color: #fff;
+  outline: 0;
+}
+.layout .menu-collapsed {
+  left:80px;
+}
+
+.content .ant-tabs-bar {
+  border-bottom: none;
+  margin: 0px;
+}
+
+.content .ant-tabs-ink-bar {
+  bottom: 6px;
+}
+.content .ant-tabs-nav .ant-tabs-tab {
+  margin-right: 16px;
+  user-select: none;
+}
+
+.content  .close {
+  font-size: 10px;
+  margin-left: 10px;
+  margin-right: 0px;
+  visibility: hidden;
+}
+
+.ant-tabs-tab:hover .close {
+  visibility: visible;
+}
+
+.content .content-main {
+  padding: 10px 20px;
+  overflow: auto;
+  margin-top: 112px;
+}

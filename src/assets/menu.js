@@ -1,0 +1,34 @@
+const menu = [
+  {
+    text:'Dashboard',
+    icon:'dashboard',
+    link:'/dashboard'
+  },
+  {
+    text:'UI积累',
+    icon:'bars',
+    children:[
+      {
+        text:'富文本编辑器',
+        icon:'edit',
+        link:'/ui/editor'
+      },
+      {
+        text:'表单',
+        icon:'form',
+        link:'/ui/form'
+      },
+      {
+        text:'表格',
+        icon:'table',
+        link:'/ui/table'
+      },
+      {
+        text:'拖拽',
+        icon:'drag',
+        link:'/ui/drag'
+      },
+    ]
+  }
+]
+export default menu

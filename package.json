@@ -1,0 +1,54 @@
+{
+  "name": "my-react-admin",
+  "version": "1.0.0",
+  "description": "react+react-router+antd+es6打造自己的react后台管理",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open --config webpack.config.dev.js",
+    "build": "webpack --progress --config webpack.config.prod.js",
+    "chart": "webpack --profile --json > stats.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tian-cai/my-react-admin.git"
+  },
+  "author": "tian-cai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tian-cai/my-react-admin/issues"
+  },
+  "homepage": "https://github.com/tian-cai/my-react-admin#readme",
+  "dependencies": {
+    "antd": "^3.10.1",
+    "autoprefixer": "^9.2.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-runtime": "^6.26.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "webpack": "^4.20.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.9.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^2.0.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.1.2"
+  }
+}

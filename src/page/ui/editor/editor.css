@@ -1,0 +1,86 @@
+.rich-text {
+  background-color: #fff;
+  overflow: hidden;
+}
+.rich-text .bf-content {
+  height: 420px;
+}
+.preview {
+  background-color: #fff;
+}
+
+.md {
+  background: #fff;
+  padding: 10px;
+  padding-left: 20px;
+}
+.md h1,
+.md h2,
+.md h3 {
+  border-bottom: 1px solid #eee;
+  line-height: 40px;
+}
+.md h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0.67em 0em;
+}
+.md h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0.83em 0em;
+}
+.md h3 {
+  font-size: 1.17em;
+  font-weight: 700;
+  margin: 1em 0em;
+}
+.md h4 {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 1.33em 0em;
+}
+.md h5 {
+  font-size: 0.83em;
+  font-weight: 700;
+  margin: 1.33em 0em;
+}
+.md h6 {
+  font-size: 0.67em;
+  font-weight: 700;
+}
+.md p {
+  font-size: 15px;
+  line-height: 1.5em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.md blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eee;
+}
+.md img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}
+.md ul,
+.md ol {
+  margin: 1em 0em;
+  padding-left: 40px;
+}
+.md ul li,
+.md ol li {
+  display: list-item;
+  line-height: 2em;
+}
+.md pre{
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}

@@ -28,6 +28,7 @@
   top: 0px;
   left: 200px;
   right: 0;
+  z-index: 999;
 } 
 .header .trigger {
   font-size: 18px;
@@ -62,6 +63,7 @@
   border-bottom: 1px solid #d9d9d9;
   background-color: #fff;
   outline: 0;
+  z-index: 999 ;
 }
 .layout .menu-collapsed {
   left:80px;

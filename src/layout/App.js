@@ -2,6 +2,7 @@ import React from "react";
 import {withRouter} from "react-router-dom";
 import { Layout} from 'antd';
 import "./layout.css";
+import "./../common/style/common.css"
 import CustomSlide from "./custom-slide.js";
 import CustomHead  from "./custom-head.js";
 import CustomContent from "./custom-content.js";

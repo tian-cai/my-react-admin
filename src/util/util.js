@@ -20,3 +20,14 @@ export function renderMenu(menuArr) {
   }
   return temp
 }
+
+export function parseSearch(search,key) {
+  search = search.slice(1)
+  let arr = search.split('&')
+  let obj = {}
+  arr.forEach(ele => {
+    let temp = ele.split('=')
+    obj[temp[0]] = temp[1]
+  });
+  return obj[key]
+}

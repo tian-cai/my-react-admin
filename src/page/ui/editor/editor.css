@@ -13,6 +13,7 @@
   background: #fff;
   padding: 10px;
   padding-left: 20px;
+  word-break: break-all;
 }
 .md h1,
 .md h2,
@@ -51,7 +52,6 @@
 }
 .md p {
   font-size: 15px;
-  line-height: 1.5em;
   white-space: pre-wrap;
   word-wrap: break-word;
 }

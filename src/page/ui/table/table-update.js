@@ -1,7 +1,7 @@
 import React from "react";
-import { Form, Input,Select, Button,Radio,message } from 'antd';
+import { Form, Input, Select, Button, Radio, message } from 'antd';
 import apiService from "./../../../service/apiservice.js"
-import {parseSearch} from "./../../../util/util.js"
+import { parseSearch } from "./../../../util/util.js"
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 const Option = Select.Option;
@@ -10,24 +10,24 @@ class UiTableUpdate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      personDetail:''
+      personDetail: ''
     }
     this.submitPerson = this.submitPerson.bind(this)
   }
 
   componentWillMount() {
     let location = this.props.location
-    let id = parseSearch(location.search,'id')
+    let id = parseSearch(location.search, 'id')
     if (id) {
       apiService.queryPerson(id)
-      .then((res)=>{
-        this.setState({
-          personDetail: res.data
+        .then((res) => {
+          this.setState({
+            personDetail: res.data
+          })
         })
-      })
-      .catch((err)=>{
-        message.error(err,0.8);
-      })
+        .catch((err) => {
+          message.error(err, 0.8);
+        })
     }
   }
 
@@ -42,13 +42,13 @@ class UiTableUpdate extends React.Component {
           values['id'] = personDetail.id
         }
         apiService[url](values)
-        .then((res)=>{
-          message.success('保存成功',0.8);
-          this.props.history.push('/ui/table')
-        })
-        .catch((err)=>{
-          message.error(err,0.8);
-        })
+          .then((res) => {
+            message.success('保存成功', 0.8);
+            this.props.history.push('/ui/table')
+          })
+          .catch((err) => {
+            message.error(err, 0.8);
+          })
       }
     });
   }
@@ -87,18 +87,18 @@ class UiTableUpdate extends React.Component {
       </Select>
     );
     return (
-      <div className="white" style={{padding:20}}>
-        <Form style={{'maxWidth':700}}>
+      <div className="white" style={{ padding: 20 }}>
+        <Form style={{ 'maxWidth': 700 }}>
           <FormItem label="姓名" {...formItemLayout}>
-            {getFieldDecorator('name',{
+            {getFieldDecorator('name', {
               initialValue: personDetail.name,
-              rules:[{required: true, message: 'Please input your name!'}]
+              rules: [{ required: true, message: 'Please input your name!' }]
             })(
               <Input />
             )}
           </FormItem>
           <FormItem label="性别"  {...formItemLayout}>
-            {getFieldDecorator('sex',{
+            {getFieldDecorator('sex', {
               initialValue: personDetail.sex || '男'
             })(
               <RadioGroup>
@@ -108,28 +108,28 @@ class UiTableUpdate extends React.Component {
             )}
           </FormItem>
           <FormItem label="手机" {...formItemLayout}>
-            {getFieldDecorator('phone',{
+            {getFieldDecorator('phone', {
               initialValue: personDetail.phone,
-              rules:[{required: true, message: 'Please input your phone!'},
-              {pattern: /^\d{11}$/, message: 'Please input valid phone!'}]
+              rules: [{ required: true, message: 'Please input your phone!' },
+              { pattern: /^\d{11}$/, message: 'Please input valid phone!' }]
             })(
-              <Input addonBefore={prefixPhone}/>
+              <Input addonBefore={prefixPhone} />
             )}
           </FormItem>
           <FormItem label="E-mail" {...formItemLayout}>
-            {getFieldDecorator('email',{
+            {getFieldDecorator('email', {
               initialValue: personDetail.email,
-              rules:[
-              {required: true, message: 'Please input your E-mail!'},
-              {type: 'email', message: 'The input is not valid E-mail!'}]
+              rules: [
+                { required: true, message: 'Please input your E-mail!' },
+                { type: 'email', message: 'The input is not valid E-mail!' }]
             })(
               <Input />
             )}
           </FormItem>
           <FormItem label="地址" {...formItemLayout}>
-            {getFieldDecorator('address',{
+            {getFieldDecorator('address', {
               initialValue: personDetail.address,
-              rules:[{required: true, message: 'Please select your address!',}]
+              rules: [{ required: true, message: 'Please select your address!', }]
             })(
               <Select allowClear>
                 <Option value="北京">北京</Option>

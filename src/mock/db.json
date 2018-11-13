@@ -35,15 +35,142 @@
       "email": "dufu@163.com",
       "address": "深圳",
       "id": 103
+    }
+  ],
+  "charts": [
+    {
+      "id": 2000,
+      "title": "曲线折线图",
+      "type": "line",
+      "data": [
+        {
+          "month": "Jan",
+          "Tokyo": 7,
+          "London": 3.9
+        },
+        {
+          "month": "Feb",
+          "Tokyo": 6.9,
+          "London": 4.2
+        },
+        {
+          "month": "Mar",
+          "Tokyo": 9.5,
+          "London": 5.7
+        },
+        {
+          "month": "Apr",
+          "Tokyo": 14.5,
+          "London": 8.5
+        },
+        {
+          "month": "May",
+          "Tokyo": 18.4,
+          "London": 11.9
+        },
+        {
+          "month": "Jun",
+          "Tokyo": 21.5,
+          "London": 15.2
+        },
+        {
+          "month": "Jul",
+          "Tokyo": 25.2,
+          "London": 17
+        },
+        {
+          "month": "Aug",
+          "Tokyo": 26.5,
+          "London": 16.6
+        },
+        {
+          "month": "Sep",
+          "Tokyo": 23.3,
+          "London": 14.2
+        },
+        {
+          "month": "Oct",
+          "Tokyo": 18.3,
+          "London": 10.3
+        },
+        {
+          "month": "Nov",
+          "Tokyo": 13.9,
+          "London": 6.6
+        },
+        {
+          "month": "Dec",
+          "Tokyo": 9.6,
+          "London": 4.8
+        }
+      ]
     },
     {
-      "prefix": "86",
-      "name": "李清照",
-      "sex": "女",
-      "phone": "34566545234",
-      "email": "1232432@qq.com",
-      "address": "深圳",
-      "id": 104
+      "id": 2001,
+      "title": "分组柱状图",
+      "type": "bar",
+      "data": [
+        {
+          "month": "Jan",
+          "Tokyo": 7,
+          "London": 3.9
+        },
+        {
+          "month": "Feb",
+          "Tokyo": 6.9,
+          "London": 4.2
+        },
+        {
+          "month": "Mar",
+          "Tokyo": 9.5,
+          "London": 5.7
+        },
+        {
+          "month": "Apr",
+          "Tokyo": 14.5,
+          "London": 8.5
+        },
+        {
+          "month": "May",
+          "Tokyo": 18.4,
+          "London": 11.9
+        },
+        {
+          "month": "Jun",
+          "Tokyo": 21.5,
+          "London": 15.2
+        },
+        {
+          "month": "Jul",
+          "Tokyo": 25.2,
+          "London": 17
+        },
+        {
+          "month": "Aug",
+          "Tokyo": 26.5,
+          "London": 16.6
+        },
+        {
+          "month": "Sep",
+          "Tokyo": 23.3,
+          "London": 14.2
+        },
+        {
+          "month": "Oct",
+          "Tokyo": 18.3,
+          "London": 10.3
+        },
+        {
+          "month": "Nov",
+          "Tokyo": 13.9,
+          "London": 6.6
+        },
+        {
+          "month": "Dec",
+          "Tokyo": 9.6,
+          "London": 4.8
+        }
+      ]
     }
   ]
 }

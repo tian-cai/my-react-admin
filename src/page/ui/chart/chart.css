@@ -1,0 +1,10 @@
+.chart-item {
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.chart-item>h3 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}

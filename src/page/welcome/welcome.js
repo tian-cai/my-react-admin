@@ -2,9 +2,8 @@ import React from "react";
 
 function Welcome(props) {
   return (
-    <div>
-      <h2>Welcome</h2>
-      <p>My Admin14545</p>
+    <div className="center">
+      <h2 style={{ fontSize: 50, marginTop: 60 }}>Welcome</h2>
     </div>)
 }
 

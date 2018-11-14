@@ -1,5 +1,6 @@
 import axios from "axios"
 import env from "./../env/env.js"
+import { isLogin } from "../util/util.js";
 
 let apiService = {
 
@@ -27,6 +28,25 @@ let apiService = {
   // 获取图表数据
   getChartData() {
     return axios.get(`${env}/charts`)
+  },
+
+  // 假登陆
+  login(data) {
+    let info = {}
+    if (data.userName !== 'admin' && data.userName !== 'guest') {
+      info['message'] = '用户名不存在'
+      info['islogin'] = false
+      return info
+    }
+    if (data.userName !== data.password) {
+      info['message'] = '密码错误'
+      info['islogin'] = false
+      return info
+    }
+    info['message'] = '登陆成功'
+    info['islogin'] = true
+    info['role'] = data.userName
+    return info
   }
 }
 

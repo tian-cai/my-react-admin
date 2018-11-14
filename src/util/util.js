@@ -41,3 +41,9 @@ export function getRole() {
   const role = sessionStorage.getItem('role')
   return role
 }
+
+// 判断是否登陆
+export function isLogin() {
+  const role = sessionStorage.getItem('role')
+  return role ? true : false
+}

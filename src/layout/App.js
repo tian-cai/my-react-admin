@@ -8,6 +8,7 @@ import CustomHead from "./custom-head.js";
 import CustomContent from "./custom-content.js";
 import { isLogin } from "./../util/util.js"
 import Login from "./login.js"
+import FullScreenLoading from "./../common/components/fullloading.js"
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +21,8 @@ class App extends React.Component {
     this.state = {
       panes: JSON.parse(sessionStorage.getItem('tabs')) || [{ title: 'Welcome', key: 'Welcome', link: '/' }],
       activeKey: sessionStorage.getItem('activeKey') || '/',
-      isCollapsed: false
+      isCollapsed: false,
+      isLoading: true
     }
   }
 
@@ -80,6 +82,11 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({
+      isLoading: false
+    })
+  }
   componentWillMount() {
     this.jumplogin()
   }
@@ -87,19 +94,19 @@ class App extends React.Component {
     this.jumplogin()
   }
 
-
   render() {
     const isCollapsed = this.state.isCollapsed
+    const isLoading = this.state.isLoading
     const flag = isLogin()
     return (
-      flag ? <Layout className="layout">
-        <CustomSlide customProp={this.state} clickMenu={this.clickMenu}></CustomSlide>
-        <Layout className="layout">
-          <CustomHead isCollapsed={isCollapsed} toggleCollapsed={this.toggleCollapsed}></CustomHead>
-          <CustomContent cusProp={this.state} clickTab={this.clickTab} closeTab={this.closeTab}></CustomContent>
-        </Layout>
-      </Layout> : <Route path="/login" component={Login} />
-
+      isLoading ? <FullScreenLoading></FullScreenLoading> :
+        flag ? <Layout className="layout">
+          <CustomSlide customProp={this.state} clickMenu={this.clickMenu}></CustomSlide>
+          <Layout className="layout">
+            <CustomHead isCollapsed={isCollapsed} toggleCollapsed={this.toggleCollapsed}></CustomHead>
+            <CustomContent cusProp={this.state} clickTab={this.clickTab} closeTab={this.closeTab}></CustomContent>
+          </Layout>
+        </Layout> : <Route path="/login" component={Login} />
     );
   }
 }

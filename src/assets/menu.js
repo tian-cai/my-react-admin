@@ -17,12 +17,6 @@ const menu = [
         role: ["admin", "guest"]
       },
       {
-        text: '拖拽',
-        icon: 'drag',
-        link: '/ui/drag',
-        role: ["admin", "guest"]
-      },
-      {
         text: '图表',
         icon: 'line-chart',
         link: '/ui/chart',

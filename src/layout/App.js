@@ -1,13 +1,13 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Route } from "react-router-dom";
 import { Layout } from 'antd';
 import "./layout.css";
 import "./../common/style/common.css"
 import CustomSlide from "./custom-slide.js";
 import CustomHead from "./custom-head.js";
 import CustomContent from "./custom-content.js";
-import Login from "./login.js"
 import { isLogin } from "./../util/util.js"
+import Login from "./login.js"
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class App extends React.Component {
     this.clickTab = this.clickTab.bind(this)
     this.closeTab = this.closeTab.bind(this)
     this.toggleCollapsed = this.toggleCollapsed.bind(this)
+    this.jumplogin = this.jumplogin.bind(this)
     this.state = {
       panes: JSON.parse(sessionStorage.getItem('tabs')) || [{ title: 'Welcome', key: 'Welcome', link: '/' }],
       activeKey: sessionStorage.getItem('activeKey') || '/',
@@ -69,6 +70,24 @@ class App extends React.Component {
     sessionStorage.setItem('activeKey', activeKey)
   }
 
+  // 未登录跳转至登陆页面
+  jumplogin() {
+    let { location, history } = this.props
+    const flag = isLogin()
+    if (!flag && location.pathname !== '/login') {
+      history.replace('/login')
+      location.pathname = '/login'
+    }
+  }
+
+  componentWillMount() {
+    this.jumplogin()
+  }
+  componentWillUpdate() {
+    this.jumplogin()
+  }
+
+
   render() {
     const isCollapsed = this.state.isCollapsed
     const flag = isLogin()
@@ -79,7 +98,7 @@ class App extends React.Component {
           <CustomHead isCollapsed={isCollapsed} toggleCollapsed={this.toggleCollapsed}></CustomHead>
           <CustomContent cusProp={this.state} clickTab={this.clickTab} closeTab={this.closeTab}></CustomContent>
         </Layout>
-      </Layout> : <Login></Login>
+      </Layout> : <Route path="/login" component={Login} />
 
     );
   }

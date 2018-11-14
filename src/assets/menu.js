@@ -1,11 +1,5 @@
 const menu = [
   {
-    text: 'Dashboard',
-    icon: 'dashboard',
-    link: '/dashboard',
-    role: ["admin", "guest"]
-  },
-  {
     text: 'UI积累',
     icon: 'bars',
     role: ["admin", "guest"],

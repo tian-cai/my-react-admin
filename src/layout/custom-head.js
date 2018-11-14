@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { Layout, Icon, Avatar, Badge, Input, Dropdown, Menu } from 'antd';
 const { Header } = Layout;
 const Search = Input.Search;
@@ -15,6 +16,7 @@ class CustomHead extends React.Component {
   }
   logout() {
     sessionStorage.clear()
+    this.props.history.replace('/login')
   }
   render() {
     const dropdownMenu = (
@@ -42,4 +44,4 @@ class CustomHead extends React.Component {
   }
 }
 
-export default CustomHead
+export default withRouter(CustomHead)

@@ -26,6 +26,7 @@ class App extends React.Component {
     }
   }
 
+
   toggleCollapsed() {
     this.setState({
       isCollapsed: !this.state.isCollapsed,

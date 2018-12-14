@@ -5,8 +5,7 @@ let base = {
   entry: __dirname + "/src/index.js",
   output: {
     path: __dirname + "/dist",
-    filename: "[name]-[hash].js",
-    // publicPath:""
+    filename: "[name]-[hash].js"
   },
   plugins: [
     new htmlWebpackPlugin({
@@ -15,10 +14,6 @@ let base = {
   ],
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
-      },
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],

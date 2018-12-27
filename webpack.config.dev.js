@@ -1,10 +1,14 @@
-let base = require("./webpack.config.js");
-let webpack = require("webpack");
-let merge = require('webpack-merge');
+const base = require("./webpack.config.base");
+const webpack = require("webpack");
+const merge = require('webpack-merge');
 
 module.exports = merge(base,{
   mode: 'development',
   devtool: "inline-source-map",
+  output: {
+    path: __dirname + "/dist",
+    filename: "[name]-[hash].js"
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
@@ -14,13 +18,5 @@ module.exports = merge(base,{
     hot: true,
     inline:true,
     historyApiFallback: true
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
-      }
-    ]
   }
 })

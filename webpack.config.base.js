@@ -3,10 +3,6 @@ let path = require('path')
 
 let base = {
   entry: __dirname + "/src/index.js",
-  output: {
-    path: __dirname + "/dist",
-    filename: "[name]-[hash].js"
-  },
   plugins: [
     new htmlWebpackPlugin({
       template: "src/index.html"
@@ -14,6 +10,10 @@ let base = {
   ],
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
@@ -40,6 +40,19 @@ let base = {
         include: path.resolve(__dirname,"src")
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          // 打包第三方库
+          test: /\/node_modules\//,
+          name: "vendor",
+          chunks: "all",
+          minChunks: 1
+        }
+      }
+    }
   }
  
 };
